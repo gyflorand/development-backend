@@ -8,7 +8,6 @@ class PostsController extends Controller
 {
     public function show(string $slug)
     {
-//        $post = DB::table('posts')->where('slug', $slug)->first();
         $post = Post::where('slug', $slug)->first();
 
         return view(
