@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +20,4 @@ Route::get(
     }
 );
 
-Route::get('/posts/{post}', PostsController::class . '@show');
+Route::get('/posts/{post}', 'PostsController@show');
