@@ -1,4 +1,9 @@
 <!doctype html>
+<?php
+
+/** @var \App\Models\Post $post */
+
+?>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
