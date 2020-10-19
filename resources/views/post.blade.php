@@ -8,7 +8,6 @@
         <title>Posts</title>
     </head>
     <body>
-        <h1>{{ $name }}</h1>
-        <h2>{{ $post->body }}</h2>
+        <h1>{{ $post->body }}</h1>
     </body>
 </html>

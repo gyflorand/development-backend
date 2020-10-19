@@ -13,7 +13,6 @@ class PostsController extends Controller
         return view(
             'post',
             [
-                'name' => request('name'),
                 'post' => $post,
             ]
         );
