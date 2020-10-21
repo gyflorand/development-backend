@@ -1,6 +1,3 @@
-<?php
-/** @var \App\Models\Post $post */ ?>
-
 @extends('layout')
 
 @section('content')
