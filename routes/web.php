@@ -25,4 +25,6 @@ Route::get(
 
 Route::get('/posts/{slug}', [PostsController::class, 'show']);
 Route::get('/about', [AboutController::class, 'show']);
+
+Route::get('/articles', [ArticlesController::class, 'index']);
 Route::get('/articles/{id}', [ArticlesController::class, 'show']);
