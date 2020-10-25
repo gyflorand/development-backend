@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @mixin IdeHelperProject
+ * @mixin IdeHelperArticle
  */
-class Project extends Model
+class Article extends Model
 {
     use HasFactory;
 }
