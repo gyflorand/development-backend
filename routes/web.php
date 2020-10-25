@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,4 @@ Route::get(
 
 Route::get('/posts/{slug}', [PostsController::class, 'show']);
 Route::get('/about', [AboutController::class, 'show']);
+Route::get('/articles/{id}', [ArticlesController::class, 'show']);

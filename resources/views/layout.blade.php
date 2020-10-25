@@ -28,8 +28,8 @@
                         <li class={{ Request::is('about') ? 'current_page_item' : '' }} >
                             <a href="/about" accesskey="3" title="">About Us</a>
                         </li>
-                        <li class={{ Request::is('/careers') ? 'current_page_item' : '' }}>
-                            <a href="/careers" accesskey="4" title="">Careers</a>
+                        <li class={{ Request::is('/articles') ? 'current_page_item' : '' }}>
+                            <a href="/articles" accesskey="4" title="">Articles</a>
                         </li>
                         <li class={{ Request::is('/contact') ? 'current_page_item' : '' }}>
                             <a href="/contact" accesskey="5" title="">Contact Us</a>
