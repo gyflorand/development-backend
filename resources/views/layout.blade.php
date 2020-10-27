@@ -9,13 +9,15 @@
         <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet"/>
         <link href="/css/default.css" rel="stylesheet" type="text/css" media="all"/>
         <link href="/css/fonts.css" rel="stylesheet" type="text/css" media="all"/>
-        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/app.css"/>
+
+        @yield('head')
     </head>
     <body>
         <div id="header-wrapper">
             <div id="header" class="container">
                 <div id="logo">
-                    <h1><a href="#">SimpleWork</a></h1>
+                    <h1><a href="/">SimpleWork</a></h1>
                 </div>
                 <div id="menu">
                     <ul>
