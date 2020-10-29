@@ -30,3 +30,5 @@ Route::get('/articles', [ArticlesController::class, 'index']);
 Route::post('/articles', [ArticlesController::class, 'store']);
 Route::get('/articles/create', [ArticlesController::class, 'create']);
 Route::get('/articles/{id}', [ArticlesController::class, 'show']);
+Route::get('/articles/{id}/edit', [ArticlesController::class, 'edit']);
+Route::put('/articles/{id}', [ArticlesController::class, 'update']);
