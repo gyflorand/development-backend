@@ -16,11 +16,9 @@ class ArticlesController extends Controller
         return view('articles.index', ['articles' => $articles]);
     }
 
-    public function show(int $id): View
+    public function show(Article $article): View
     {
         // Show a single resource
-
-        $article = Article::find($id);
 
         return view('articles.show', ['article' => $article]);
     }
@@ -36,55 +34,41 @@ class ArticlesController extends Controller
     {
         // Persist the new resource
 
-        request()->validate(
-            [
-                'title' => ['required'],
-                'excerpt' => ['required'],
-                'body' => ['required'],
-            ]
+        Article::create(
+            request()->validate(
+                [
+                    'title' => ['required'],
+                    'excerpt' => ['required'],
+                    'body' => ['required'],
+                ]
+            )
         );
-
-        $article = new Article();
-
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-
-        $article->save();
 
         return redirect('/articles');
     }
 
-    public function edit(int $id): View
+    public function edit(Article $article): View
     {
         // Show a view to edit an existing resource
-
-        $article = Article::query()->find($id);
 
         return view('articles.edit', ['article' => $article]);
     }
 
-    public function update(int $id)
+    public function update(Article $article)
     {
         // Persist the edited resource
 
-        request()->validate(
-            [
-                'title' => ['required'],
-                'excerpt' => ['required'],
-                'body' => ['required'],
-            ]
+        $article->update(
+            request()->validate(
+                [
+                    'title' => ['required'],
+                    'excerpt' => ['required'],
+                    'body' => ['required'],
+                ]
+            )
         );
 
-        $article = Article::query()->find($id);
-
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-
-        $article->save();
-
-        return redirect('/articles/' . $id);
+        return redirect('/articles/' . $article->id);
     }
 
     public function destroy()
