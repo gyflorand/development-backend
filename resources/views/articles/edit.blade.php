@@ -5,7 +5,11 @@
 @endsection
 
 @section('content')
-    <?php /** @var \App\Models\Article $article */ ?>
+    <?php
+    /**
+     * @var \App\Models\Article $article
+     */
+    ?>
     <div id="wrapper">
         <div id="id" class="container">
             <h1 class="heading has-text-weight-bold is-size-4">Update Article</h1>
