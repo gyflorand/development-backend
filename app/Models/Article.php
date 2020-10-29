@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Models\Article
@@ -12,18 +15,18 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $title
  * @property string $excerpt
  * @property string $body
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|Article newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Article newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Article query()
- * @method static \Illuminate\Database\Eloquent\Builder|Article whereBody($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Article whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Article whereExcerpt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Article whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Article whereTitle($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Article whereUpdatedAt($value)
- * @mixin \Eloquent
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @method static Builder|Article newModelQuery()
+ * @method static Builder|Article newQuery()
+ * @method static Builder|Article query()
+ * @method static Builder|Article whereBody($value)
+ * @method static Builder|Article whereCreatedAt($value)
+ * @method static Builder|Article whereExcerpt($value)
+ * @method static Builder|Article whereId($value)
+ * @method static Builder|Article whereTitle($value)
+ * @method static Builder|Article whereUpdatedAt($value)
+ * @mixin Eloquent
  */
 class Article extends Model
 {

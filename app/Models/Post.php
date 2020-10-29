@@ -2,8 +2,11 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Models\Post
@@ -13,19 +16,19 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $title
  * @property string $body
  * @property string|null $published_at
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|Post newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Post newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Post query()
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereBody($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post wherePublishedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereSlug($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereTitle($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Post whereUpdatedAt($value)
- * @mixin \Eloquent
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @method static Builder|Post newModelQuery()
+ * @method static Builder|Post newQuery()
+ * @method static Builder|Post query()
+ * @method static Builder|Post whereBody($value)
+ * @method static Builder|Post whereCreatedAt($value)
+ * @method static Builder|Post whereId($value)
+ * @method static Builder|Post wherePublishedAt($value)
+ * @method static Builder|Post whereSlug($value)
+ * @method static Builder|Post whereTitle($value)
+ * @method static Builder|Post whereUpdatedAt($value)
+ * @mixin Eloquent
  */
 class Post extends Model
 {
