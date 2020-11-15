@@ -32,5 +32,13 @@ class Article extends Model
 {
     use HasFactory;
 
+    /**
+     * @var string[]
+     */
     protected $fillable = ['title', 'excerpt', 'body'];
+
+    public function path(): string
+    {
+        return route('articles.show', $this);
+    }
 }

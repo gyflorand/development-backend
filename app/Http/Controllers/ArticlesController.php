@@ -44,7 +44,7 @@ class ArticlesController extends Controller
             )
         );
 
-        return redirect('/articles');
+        return redirect(route('articles.index'));
     }
 
     public function edit(Article $article): View
@@ -68,7 +68,7 @@ class ArticlesController extends Controller
             )
         );
 
-        return redirect('/articles/' . $article->id);
+        return redirect($article->path());
     }
 
     public function destroy()

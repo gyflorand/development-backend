@@ -7,7 +7,7 @@
                 <?php /** @var \App\Models\Article[] $articles */ ?>
                 @foreach($articles as $article)
                     <div class="title">
-                        <a href="/articles/{{ $article->id }}"><h2>{{ $article->title }}</h2></a>
+                        <a href="{{ $article->path() }}"><h2>{{ $article->title }}</h2></a>
                         <p><img src="/images/banner.jpg" alt="" class="image image-full"/></p>
                         <p>{{ $article->excerpt }}</p>
                     </div>
