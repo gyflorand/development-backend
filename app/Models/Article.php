@@ -6,12 +6,14 @@ use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
 
 /**
  * App\Models\Article
  *
  * @property int $id
+ * @property int $user_id
  * @property string $title
  * @property string $excerpt
  * @property string $body
@@ -42,8 +44,8 @@ class Article extends Model
         return route('articles.show', $this);
     }
 
-    public function user(): void
+    public function user(): BelongsTo
     {
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
