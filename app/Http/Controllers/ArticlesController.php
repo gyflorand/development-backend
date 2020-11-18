@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Tag;
 use Illuminate\Contracts\View\View;
 
 class ArticlesController extends Controller
@@ -11,7 +12,11 @@ class ArticlesController extends Controller
     {
         // Render a list of a resource
 
-        $articles = Article::latest('created_at')->get();
+        if (request('tag')) {
+            $articles = Tag::query()->where('name', request('tag'))->firstOrFail()->articles;
+        } else {
+            $articles = Article::latest('created_at')->get();
+        }
 
         return view('articles.index', ['articles' => $articles]);
     }
@@ -71,7 +76,7 @@ class ArticlesController extends Controller
         return redirect($article->path());
     }
 
-    public function destroy()
+    public function destroy(): void
     {
         // Delete the resource
     }
