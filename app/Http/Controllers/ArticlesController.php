@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\Article;
@@ -32,22 +34,25 @@ class ArticlesController extends Controller
     {
         // Show a view to create a new resource
 
-        return view('articles.create');
+        return view(
+            'articles.create',
+            [
+                'tags' => Tag::all(),
+            ]
+        );
     }
 
     public function store()
     {
         // Persist the new resource
 
-        Article::create(
-            request()->validate(
-                [
-                    'title' => ['required'],
-                    'excerpt' => ['required'],
-                    'body' => ['required'],
-                ]
-            )
-        );
+        $this->validateArticle();
+
+        $article = new Article(request(['title', 'excerpt', 'body']));
+        $article->user_id = 1;
+        $article->save();
+
+        $article->tags()->attach(request('tags'));
 
         return redirect(route('articles.index'));
     }
@@ -63,21 +68,25 @@ class ArticlesController extends Controller
     {
         // Persist the edited resource
 
-        $article->update(
-            request()->validate(
-                [
-                    'title' => ['required'],
-                    'excerpt' => ['required'],
-                    'body' => ['required'],
-                ]
-            )
-        );
+        $article->update($this->validateArticle());
 
         return redirect($article->path());
     }
 
-    public function destroy(): void
+    public function destroy($n): void
     {
         // Delete the resource
+    }
+
+    protected function validateArticle()
+    {
+        return request()->validate(
+            [
+                'title' => 'required',
+                'excerpt' => 'required',
+                'body' => 'required',
+                'tags' => 'exists:tags,id',
+            ]
+        );
     }
 }

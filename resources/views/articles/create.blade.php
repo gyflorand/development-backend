@@ -36,10 +36,9 @@
                     <label class="label" for="excerpt">Excerpt</label>
 
                     <div class="control">
-                        <textarea
-                                class="textarea @error('excerpt') is-danger @enderror"
-                                id="excerpt"
-                                name="excerpt"
+                        <textarea class="textarea @error('excerpt') is-danger @enderror"
+                                  id="excerpt"
+                                  name="excerpt"
                         >{{ old('excerpt') }}</textarea>
                     </div>
 
@@ -62,6 +61,23 @@
                     <p class="help is-danger">{{ $errors->first('body') }}</p>
                     @enderror
                 </div>
+
+                <div class="field">
+                    <label class="label" for="tags">Tags</label>
+
+                    <div class="select is-multiple control">
+                        <select id="tags" name="tags[]" multiple>
+                            @foreach ($tags as $tag)
+                                <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    @error('tags')
+                    <p class="help is-danger">{{ $message }}</p>
+                    @enderror
+                </div>
+
                 <div class="field is-grouped">
                     <div class="control">
                         <button class="button is-link" type="submit">Submit</button>
