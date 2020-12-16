@@ -32,3 +32,6 @@ Route::get('/articles/create', [ArticlesController::class, 'create'])->name('art
 Route::get('/articles/{article}', [ArticlesController::class, 'show'])->name('articles.show');
 Route::get('/articles/{article}/edit', [ArticlesController::class, 'edit'])->name('articles.edit');
 Route::put('/articles/{article}', [ArticlesController::class, 'update'])->name('articles.update');
+
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -78,7 +78,7 @@ class ArticlesController extends Controller
         // Delete the resource
     }
 
-    protected function validateArticle()
+    protected function validateArticle(): array
     {
         return request()->validate(
             [
