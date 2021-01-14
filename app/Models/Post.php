@@ -32,5 +32,5 @@ use Illuminate\Support\Carbon;
  */
 class Post extends Model
 {
-    use HasFactory;
+	use HasFactory;
 }

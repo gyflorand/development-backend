@@ -33,30 +33,30 @@ use Illuminate\Support\Carbon;
  */
 class Article extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
-    /**
-     * @var string[]
-     */
-    protected $fillable = ['title', 'excerpt', 'body'];
+	/**
+	 * @var string[]
+	 */
+	protected $fillable = ['title', 'excerpt', 'body'];
 
-    public function path(): string
-    {
-        return route('articles.show', $this);
-    }
+	public function path(): string
+	{
+		return route('articles.show', $this);
+	}
 
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class, 'user_id');
-    }
+	public function user(): BelongsTo
+	{
+		return $this->belongsTo(User::class, 'user_id');
+	}
 
-    public function tags(): BelongsToMany
-    {
-        return $this->belongsToMany(
-            Tag::class,
-            'article_tag',
-            'article_id',
-            'tag_id'
-        )->withTimestamps();
-    }
+	public function tags(): BelongsToMany
+	{
+		return $this->belongsToMany(
+			Tag::class,
+			'article_tag',
+			'article_id',
+			'tag_id'
+		)->withTimestamps();
+	}
 }

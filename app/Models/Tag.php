@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Tag extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
-    public function articles(): BelongsToMany
-    {
-        return $this->belongsToMany(Article::class);
-    }
+	public function articles(): BelongsToMany
+	{
+		return $this->belongsToMany(Article::class);
+	}
 }
