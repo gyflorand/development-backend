@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\Tag;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\View as ViewFacade;
 
 class ArticlesController extends Controller
 {
@@ -20,7 +21,7 @@ class ArticlesController extends Controller
 			$articles = Article::latest('created_at')->get();
 		}
 
-		return view('articles.index', ['articles' => $articles]);
+		return ViewFacade::make('articles.index', ['articles' => $articles]);
 	}
 
 	public function show(Article $article): View

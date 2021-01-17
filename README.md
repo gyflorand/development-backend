@@ -64,4 +64,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 # Last Episode:
 
-Laravel From Scratch - Section 9/Core Concepts. Automatically Resolve Dependencies
+Laravel From Scratch - Section 9/Core Concepts. Laravel Facades Demystified
