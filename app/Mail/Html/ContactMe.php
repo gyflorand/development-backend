@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mail;
+namespace App\Mail\Html;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
@@ -21,7 +21,7 @@ class ContactMe extends Mailable
 	public function build(): self
 	{
 		return $this
-			->view('emails.contact-me')
+			->view('emails.html.contact-me')
 			->subject('More information about ' . $this->topic);
 	}
 }

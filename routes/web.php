@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PostsController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,10 +19,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get(
-    '/',
-    function () {
-        return view('welcome');
-    }
+	'/',
+	function () {
+		return view('welcome');
+	}
 );
 
 Route::get('/posts/{slug}', [PostsController::class, 'show']);
