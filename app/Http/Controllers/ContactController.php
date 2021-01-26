@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMe;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -47,14 +48,9 @@ class ContactController extends Controller
 	{
 		$this->request->validate(['email' => 'required|email']);
 
-		$this->mailer->raw(
-			'It works',
-			function ($message): void {
-				$message
-					->to($this->request->email)
-					->subject('Hello gyflorand!');
-			}
-		);
+		$this->mailer
+			->to($this->request->get('email'))
+			->send(new ContactMe('laravel'));
 
 		return $this->redirector
 			->to('/contact')
