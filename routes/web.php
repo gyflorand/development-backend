@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,3 +36,6 @@ Route::put('/articles/{article}', [ArticlesController::class, 'update'])->name('
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contacts.index');
+Route::post('/contact', [ContactController::class, 'store'])->name('contacts.store');
