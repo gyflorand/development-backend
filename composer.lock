@@ -1,20 +1,20 @@
 {
-    "_readme": [
-        "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-        "This file is @generated automatically"
-    ],
-    "content-hash": "ea01fa08b6a7fd04307531650f1593bd",
-    "packages": [
-        {
-            "name": "asm89/stack-cors",
-            "version": "v2.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/asm89/stack-cors.git",
-                "reference": "8d8f88b3b3830916be94292c1fbce84433efb1aa"
-            },
-            "dist": {
+  "_readme": [
+    "This file locks the dependencies of your project to a known state",
+    "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+    "This file is @generated automatically"
+  ],
+  "content-hash": "d424c60605c8136939ad923182c7ac63",
+  "packages": [
+    {
+      "name": "asm89/stack-cors",
+      "version": "v2.0.2",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/asm89/stack-cors.git",
+        "reference": "8d8f88b3b3830916be94292c1fbce84433efb1aa"
+      },
+      "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/asm89/stack-cors/zipball/8d8f88b3b3830916be94292c1fbce84433efb1aa",
                 "reference": "8d8f88b3b3830916be94292c1fbce84433efb1aa",
@@ -6266,26 +6266,90 @@
             "description": "A library to validate a json schema.",
             "homepage": "https://github.com/justinrainbow/json-schema",
             "keywords": [
-                "json",
-                "schema"
+              "json",
+              "schema"
             ],
-            "support": {
-                "issues": "https://github.com/justinrainbow/json-schema/issues",
-                "source": "https://github.com/justinrainbow/json-schema/tree/5.2.10"
-            },
-            "time": "2020-05-27T16:41:55+00:00"
+          "support": {
+            "issues": "https://github.com/justinrainbow/json-schema/issues",
+            "source": "https://github.com/justinrainbow/json-schema/tree/5.2.10"
+          },
+          "time": "2020-05-27T16:41:55+00:00"
         },
-        {
-            "name": "laravel/ui",
-            "version": "v3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/ui.git",
-                "reference": "a1f82c6283c8373ea1958b8a27c3d5c98cade351"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/ui/zipball/a1f82c6283c8373ea1958b8a27c3d5c98cade351",
+      {
+        "name": "laravel/telescope",
+        "version": "v4.4.1",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/laravel/telescope.git",
+          "reference": "c21b0e38c3e1e7f12a391eb97f092de1d1f2bdd8"
+        },
+        "dist": {
+          "type": "zip",
+          "url": "https://api.github.com/repos/laravel/telescope/zipball/c21b0e38c3e1e7f12a391eb97f092de1d1f2bdd8",
+          "reference": "c21b0e38c3e1e7f12a391eb97f092de1d1f2bdd8",
+          "shasum": ""
+        },
+        "require": {
+          "ext-json": "*",
+          "laravel/framework": "^8.2",
+          "php": "^7.3|^8.0",
+          "symfony/var-dumper": "^5.0"
+        },
+        "require-dev": {
+          "ext-gd": "*",
+          "orchestra/testbench": "^6.0"
+        },
+        "type": "library",
+        "extra": {
+          "laravel": {
+            "providers": [
+              "Laravel\\Telescope\\TelescopeServiceProvider"
+            ]
+          }
+        },
+        "autoload": {
+          "psr-4": {
+            "Laravel\\Telescope\\": "src/",
+            "Laravel\\Telescope\\Database\\Factories\\": "database/factories/"
+          }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+          "MIT"
+        ],
+        "authors": [
+          {
+            "name": "Taylor Otwell",
+            "email": "taylor@laravel.com"
+          },
+          {
+            "name": "Mohamed Said",
+            "email": "mohamed@laravel.com"
+          }
+        ],
+        "description": "An elegant debug assistant for the Laravel framework.",
+        "keywords": [
+          "debugging",
+          "laravel",
+          "monitoring"
+        ],
+        "support": {
+          "issues": "https://github.com/laravel/telescope/issues",
+          "source": "https://github.com/laravel/telescope/tree/v4.4.1"
+        },
+        "time": "2021-01-26T20:11:13+00:00"
+      },
+      {
+        "name": "laravel/ui",
+        "version": "v3.2.0",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/laravel/ui.git",
+          "reference": "a1f82c6283c8373ea1958b8a27c3d5c98cade351"
+        },
+        "dist": {
+          "type": "zip",
+          "url": "https://api.github.com/repos/laravel/ui/zipball/a1f82c6283c8373ea1958b8a27c3d5c98cade351",
                 "reference": "a1f82c6283c8373ea1958b8a27c3d5c98cade351",
                 "shasum": ""
             },

@@ -5,6 +5,7 @@ use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\UserNotificationController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -50,4 +51,9 @@ Route::get('/payments/create', [PaymentsController::class, 'create'])
 
 Route::post('/payments/store', [PaymentsController::class, 'store'])
 	->name('payments.store')
+	->middleware('auth');
+
+// Notifications
+Route::get('/notifications', [UserNotificationController::class, 'index'])
+	->name('notifications.index')
 	->middleware('auth');

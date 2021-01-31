@@ -59,7 +59,7 @@ class PaymentsController extends Controller
 	 */
 	public function store(Request $request): RedirectResponse
 	{
-		$this->channelManager->send($request->user(), new PaymentReceived());
+		$this->channelManager->send($request->user(), new PaymentReceived(923.49));
 
 		return $this->redirector->to('/');
 	}

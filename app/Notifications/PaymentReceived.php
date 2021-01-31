@@ -10,12 +10,14 @@ class PaymentReceived extends Notification
 {
 	use Queueable;
 
+	private float $amount;
+
 	/**
 	 * Create a new notification instance.
 	 */
-	public function __construct()
+	public function __construct(float $amount)
 	{
-		//
+		$this->amount = $amount;
 	}
 
 	/**
@@ -45,10 +47,10 @@ class PaymentReceived extends Notification
 	/**
 	 * Get the array representation of the notification.
 	 */
-	public function toArray(mixed $notifiable): array
+	public function toArray(): array
 	{
 		return [
-			//
+			'amount' => $this->amount,
 		];
 	}
 }
