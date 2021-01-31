@@ -14,7 +14,6 @@ use Illuminate\View\Factory;
 
 class ContactController extends Controller
 {
-
 	/** @var Factory */
 	private Factory $viewFactory;
 
@@ -46,6 +45,7 @@ class ContactController extends Controller
 
 	public function store(): RedirectResponse
 	{
+		/** @noinspection StaticInvocationViaThisInspection */
 		$this->request->validate(['email' => 'required|email']);
 
 		$this->mailer

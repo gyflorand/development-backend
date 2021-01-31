@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,7 @@ Route::get(
 Route::get('/posts/{slug}', [PostsController::class, 'show']);
 Route::get('/about', [AboutController::class, 'show']);
 
+// Articles
 Route::get('/articles', [ArticlesController::class, 'index'])->name('articles.index');
 Route::post('/articles', [ArticlesController::class, 'store'])->name('articles.store');
 Route::get('/articles/create', [ArticlesController::class, 'create'])->name('articles.create');
@@ -40,3 +42,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contacts.index');
 Route::post('/contact', [ContactController::class, 'store'])->name('contacts.store');
+
+// Payments
+Route::get('/payments/create', [PaymentsController::class, 'create'])
+	->name('payments.create')
+	->middleware('auth');
+
+Route::post('/payments/store', [PaymentsController::class, 'store'])
+	->name('payments.store')
+	->middleware('auth');

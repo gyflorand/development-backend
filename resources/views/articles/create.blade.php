@@ -5,16 +5,16 @@
 @endsection
 
 @section('content')
-    <?php
-    /**
-     * @var \Illuminate\Support\MessageBag $errors
-     */
-    ?>
+	<?php
+	/**
+	 * @var \Illuminate\Support\MessageBag $errors
+	 */
+	?>
     <div id="wrapper">
         <div id="id" class="container">
             <h1 class="heading has-text-weight-bold is-size-4">New Article</h1>
 
-            <form method="POST" action="{{ route('articles.store') }}">
+            <form action="{{ route('articles.store') }}" method="POST">
                 @csrf
 
                 <div class="field">
