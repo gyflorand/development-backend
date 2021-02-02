@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\DatabaseNotification;
 use Illuminate\Notifications\DatabaseNotificationCollection;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Notifications\Notification;
 use Illuminate\Support\Carbon;
 
 /**
@@ -81,5 +82,17 @@ class User extends Authenticatable
 	public function projects(): HasMany
 	{
 		return $this->hasMany(Project::class);
+	}
+
+	/**
+	 * Route notifications for the Nexmo channel.
+	 *
+	 * @param Notification $notification
+	 *
+	 * @return string
+	 */
+	public function routeNotificationForNexmo($notification): string
+	{
+		return '+36705828313';
 	}
 }
